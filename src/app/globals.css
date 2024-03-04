@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +24,224 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+
+/* .imgBox::before {
+ content: "";
+ height:20px ;
+ width: 20px;
+ position: absolute;
+ background-color: black;
+ animation: animate 3s linear infinite;
 }
+.imgBox::after{
+  content: "";
+  position: absolute;
+  inset: 10px;
+  background-color: blue;
+  border-radius: 16px;
+}
+@keyframes animate{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(100deg);
+  }
+} */
+
+
+
+.navBar-shadow{
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+ }
+
+ .custumeAnime::before{
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  height: 0.25rem;
+  width: 0;
+  background: #0208569d;
+  border-radius: 2rem;
+  transition: width 0.3s ease;
+  }
+  .custumeAnime:hover:before{
+    width: 100%;
+  }
+
+
+ /* ------------- Service card section ------------------- */
+ 
+.serviceCard {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  background-image: url('/Images/ImageTwo.png');
+  background-size: cover;
+  background-blend-mode: multiply;
+  transition: transform 0.3s ease; /* Use transform for the transition */
+  overflow: hidden; /* Ensure that the scaled image doesn't overflow the container */
+}
+
+.serviceCard:hover {
+  transform: scale(1.1);
+}
+
+/* ------------- Newslater section ------------- */
+
+.newsLater-bg-color{
+  background:linear-gradient( 122.1deg, #22103e 32.29%, #391b69 70.55% )
+}
+
+
+/* ------------ project card section ----------------- */
+
+.project-button{
+  transition: all ease 0.4s;
+  border: 2px solid #a4e401;
+  color: black;
+}
+.project-button::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color:#a4e401 ;
+  left: 0;
+  bottom: -100%;
+  border-radius: 50%;
+  transition: all ease 0.4s;
+}
+
+.project-button:hover::after {
+  bottom: 0;
+  border-radius: 0;
+  color: white;
+}
+.project-button:hover span {
+  color: white;
+}
+.project-button span{
+  color: black;
+  text-decoration: none;
+  position: relative;
+  z-index: 20;
+}
+
+/* ------------ gallery section ------------ */
+
+.gallery-top-view{
+ background-image: url('/Images/galleryBgImg.png');
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+
+ /* transition: transform 1s ease; */
+ animation: bgZoom 3s  ease-in-out infinite;
+}
+
+@keyframes bgZoom {
+  0%{
+   transform: scale(1.025);
+  }
+  50%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.025);
+  }
+}
+
+/* ================================== Gallery Model css ==================================================>  */
+.customRadial{
+background:radial-gradient(86% 83.48% at -27.81% -29.39%,#e1dfff 0%,#e0ddff .01%,#fafaff 100%);
+}
+.galleryWrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* .galleryWrap .single {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.galleryWrap .single img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.galleryWrap .single:hover img {
+  transform: scale(1.1);
+} */
+
+.sliderWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliderWrap .btnClose, .sliderWrap .btnPrev, .sliderWrap .btnNext {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.6;
+  color: #fff;
+  z-index: 1000;
+}
+
+.sliderWrap .btnClose {
+  top: 25px;
+  right: 40px;
+}
+
+.sliderWrap .btnPrev, .sliderWrap .btnNext {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sliderWrap .btnPrev {
+  left: 20px;
+}
+
+.sliderWrap .btnNext {
+  right: 20px;
+}
+
+.fullScreenImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.fullScreenImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+
+}
+
+/* Add media queries for better responsiveness */
+@media (max-width: 600px) {
+  .galleryWrap {
+    grid-template-columns: 1fr;
+  }
+}
+
