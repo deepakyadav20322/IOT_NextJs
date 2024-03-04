@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
 import Link from "next/link";
-import { toast } from "react-toastify";
+
 
 
 export default function Home() {
